@@ -1,6 +1,5 @@
 import Menu from "@/components/menu"
-
-import Profile from "./_component/profile"
+import Header from "./_component/header"
 
 const Layout = ({
   children, // will be a page or nested layout
@@ -9,7 +8,7 @@ const Layout = ({
 }) => {
   return (
     <div className="flex flex-row h-screen">
-      <div className="basis-1/6 bg-primary p-4">
+      <div className="hidden md:inline md:basis-1/6 bg-primary p-4">
         <span className="grid h-10 w-32 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">
           Logo
         </span>
@@ -25,23 +24,12 @@ const Layout = ({
           }]}
         />
       </div>
-      <div className="basis-5/6 px-5 py-4">
-        <div>
-          <div className="flex items-center h-12">
-            <div>
-              <h3 className="text-xl font-bold">
-                Manajemen Pengguna
-              </h3>
-            </div>
-            <div className="flex ml-auto items-center">
-              <Profile />
-            </div>
-          </div>
-          <div className="mt-6">
-            {
-              children
-            }
-          </div>
+      <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+        <Header />
+        <div className="px-6 py-4 bg-white">
+          {
+            children
+          }
         </div>
       </div>
      
