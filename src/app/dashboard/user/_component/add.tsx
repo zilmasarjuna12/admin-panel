@@ -160,7 +160,7 @@ const AddForm = () => {
           </form>
         </Form>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit">Submit</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
