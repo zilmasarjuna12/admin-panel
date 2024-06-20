@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/breadcrumb"
 
 import FilterForm from "./_component/filter"
+import List from "./_component/list"
 
 const Page = () => {
   return (
@@ -38,6 +39,10 @@ const Page = () => {
             Tambah
           </Button>
         </div>
+      </div>
+      <div className="mt-6">
+
+        <List />
       </div>
     </div>
   )
