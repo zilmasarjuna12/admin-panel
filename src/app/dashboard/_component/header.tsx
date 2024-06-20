@@ -12,7 +12,7 @@ import Profile from "./profile"
 
 const Header = () => {
   return (
-    <div className="sticky items-center top-0 z-[999] flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none shadow-5 px-6 py-4 border-b border-gray-200 dark:bg-gray-800">
+    <div className="sticky items-center top-0 z-[1] flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none shadow-5 px-6 py-4 border-b border-gray-200 dark:bg-gray-800">
       <div className="md:hidden">
       <Sheet >
         <SheetTrigger>Open</SheetTrigger>

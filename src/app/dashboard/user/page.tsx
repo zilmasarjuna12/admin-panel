@@ -1,17 +1,13 @@
 import {
-  Button,
-} from "@/components/ui/button"
-import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
 import FilterForm from "./_component/filter"
 import List from "./_component/list"
+import AddForm from './_component/add'
 
 const Page = () => {
   return (
@@ -33,17 +29,14 @@ const Page = () => {
       <div className="md:flex items-center">
         <FilterForm />
         <div className="mt-3 md:mt-0 flex md:ml-auto md:items-center space-x-4">
-          <Button
-            className="w-full"
-          >
-            Tambah
-          </Button>
+          <AddForm />
         </div>
       </div>
       <div className="mt-6">
-
         <List />
       </div>
+
+      
     </div>
   )
 }

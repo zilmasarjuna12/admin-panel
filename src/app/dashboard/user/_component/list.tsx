@@ -1,18 +1,10 @@
 "use client"
-import {  MoreHorizontal, Trash2, Edit2 } from "lucide-react"
+import { Trash2, Edit2 } from "lucide-react"
 
 import { ColumnDef } from "@tanstack/react-table"
 
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+
 import { DataTable } from "@/components/ui/datatable"
 
 
@@ -123,7 +115,7 @@ const List = () => {
         const payment = row.original
    
         return (
-          <div className="space-x-2">
+          <div className="flex space-x-2">
             <Button
               variant="destructive"
               size="sm"
