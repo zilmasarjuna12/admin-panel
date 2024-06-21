@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button"
 
 import { DataTable } from "@/components/ui/datatable"
 
-
-
 const users = [
   {
     id: "728ed52f",

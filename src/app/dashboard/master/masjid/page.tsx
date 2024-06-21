@@ -6,6 +6,9 @@ import {
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb"
 
+import FilterForm from "./_component/filter"
+import List from "./_component/list"
+
 const Page = () => {
   return (
     <div>
@@ -21,10 +24,20 @@ const Page = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+        <h3 className="text-xl font-semibold">
+          Data Masjid
+        </h3>
       </div>
-      <h3 className="text-xl font-semibold">
-        Data Masjid
-      </h3>
+     
+      <div className="md:flex items-center">
+        <FilterForm />
+        {/* <div className="mt-3 md:mt-0 flex md:ml-auto md:items-center space-x-4">
+          <AddForm />
+        </div> */}
+      </div>
+      <div className="mt-6">
+        <List />
+      </div>
     </div>
   )
 }
