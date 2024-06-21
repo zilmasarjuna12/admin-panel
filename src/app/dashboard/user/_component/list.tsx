@@ -114,14 +114,17 @@ const List = () => {
    
         return (
           <div className="flex space-x-2">
-            <Button
-              variant="destructive"
+           <Button
+              variant="link"
               size="sm"
             >
-              <Trash2 className="w-4" />
+              <Trash2 
+                className="w-4 text-red-500" 
+              />
             </Button>
             <Button
               size="sm"
+              variant="link"
             >
               <Edit2 className="w-4" />
             </Button>

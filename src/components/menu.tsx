@@ -50,11 +50,15 @@ const Menu: React.FC<MenuProps> = ({
                           <li key={subitem.key}>
                             <Link
                               href={item.href || ""}
-                              className="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-primary-dark"
+                              className="block rounded-lg px-2 py-2 text-sm font-medium text-white hover:bg-primary-dark"
                             >
-                              {
-                                subitem.label
-                              }
+                              <span className="flex items-center">
+                                <span className="w-1.5 h-1.5 bg-white relative mr-3 rounded-full" />
+
+                                {
+                                  subitem.label
+                                }
+                              </span>
                             </Link>
                           </li>
                         )
