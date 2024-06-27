@@ -49,7 +49,7 @@ const Menu: React.FC<MenuProps> = ({
                         return (
                           <li key={subitem.key}>
                             <Link
-                              href={item.href || ""}
+                              href={subitem.href || ""}
                               className="block rounded-lg px-2 py-2 text-sm font-medium text-white hover:bg-primary-dark"
                             >
                               <span className="flex items-center">

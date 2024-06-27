@@ -16,11 +16,13 @@ const menus = [
     children: [
       {
         key: "3-1",
-        label: "Data Masjid"
+        label: "Data Masjid",
+        href: "/dashboard/master/masjid"
       },
       {
         key: "3-2",
-        label: "Data Relawan"
+        label: "Data Relawan",
+        href: "/dashboard/master/relawan"
       },
       {
         key: "3-3",

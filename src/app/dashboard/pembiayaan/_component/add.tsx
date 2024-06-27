@@ -1,6 +1,6 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm, FormProvider } from "react-hook-form"
 import { z } from "zod"
 
 import {
@@ -23,10 +23,8 @@ import FormPekerjaan from "./form-pekerjaan"
 import { useState } from "react"
 
 const formSchema = z.object({
-  fullname: z.string(),
-  phone_number: z.string(),
-  role: z.string(),
-  status: z.boolean(),
+  username: z.string(),
+  test: z.string()
 })
 
 const getStepContent = (step: number) => {
@@ -40,18 +38,23 @@ const getStepContent = (step: number) => {
 
 const AddForm = () => {
   const [activeStep, setActiveStep] = useState(1)
-  const form = useForm<z.infer<typeof formSchema>>({
+  
+  const form = useForm<any>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullname: "",
-      phone_number: "",
-      role: "",
-      status: false,
+      username: "",
+      test: "",
     },
+    mode: "all"
   })
 
   const handleSubmit =  () => {
 
+  }
+
+  const handleNext = async () => {
+    const isStepValid = await form.trigger(undefined, { shouldFocus: true });
+    if (isStepValid) setActiveStep((prevActiveStep) => prevActiveStep + 1);
   }
 
   return (
@@ -69,18 +72,19 @@ const AddForm = () => {
         </DialogHeader>
 
         <Step 
-          activeStep={5}
+          activeStep={activeStep}
           steps={["Personal", "Pekerjaan", "Usaha", "Kontak", "Survei", "Review"]}
         />
-
-        {
-          getStepContent(activeStep)
-        }
+        <FormProvider {...form}>
+          {
+            getStepContent(activeStep)
+          }
+        </FormProvider>
         <DialogFooter>
           <Button 
             type="button"
-            onClick={() => setActiveStep(activeStep+1)}
-          >Submit</Button>
+            onClick={handleNext}
+          >Lanjutkan</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
