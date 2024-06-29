@@ -58,7 +58,7 @@ const AddForm = () => {
   }
 
   return (
-    <Dialog>
+    <Dialog >
       <DialogTrigger asChild>
         <Button
           className="w-full"
@@ -66,21 +66,23 @@ const AddForm = () => {
           Tambah
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[925px]">
-        <DialogHeader>
+      <DialogContent className="sm:max-w-[925px] p-0">
+        <DialogHeader className="p-6 pb-0">
           <DialogTitle>Tambah Pengajuan</DialogTitle>
         </DialogHeader>
-
-        <Step 
-          activeStep={activeStep}
-          steps={["Personal", "Pekerjaan", "Usaha", "Kontak", "Survei", "Review"]}
-        />
-        <FormProvider {...form}>
-          {
-            getStepContent(activeStep)
-          }
-        </FormProvider>
-        <DialogFooter>
+        
+        <div className="p-6">
+          <Step 
+            activeStep={activeStep}
+            steps={["Personal", "Pekerjaan", "Usaha", "Kontak", "Survei", "Review"]}
+          />
+          <FormProvider {...form}>
+            {
+              getStepContent(activeStep)
+            }
+          </FormProvider>
+        </div>
+        <DialogFooter className="bg-white px-6 py-3 shadow-slate border-t-[1px] border-gray-200 shadow-lg">
           <Button 
             type="button"
             onClick={handleNext}
