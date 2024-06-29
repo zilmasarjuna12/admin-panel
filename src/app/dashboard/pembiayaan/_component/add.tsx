@@ -20,6 +20,10 @@ import Step from "@/components/ui/step"
 
 import FormPersonal from "./form-personal"
 import FormPekerjaan from "./form-pekerjaan"
+import FormUsaha from "./form-usaha"
+import FormKontak from "./form-kontak"
+import FormSurvey from "./form-survey"
+
 import { useState } from "react"
 
 const formSchema = z.object({
@@ -33,6 +37,12 @@ const getStepContent = (step: number) => {
       return <FormPersonal />
     case 2:
       return <FormPekerjaan />
+    case 3:
+      return <FormUsaha />
+    case 4:
+      return <FormKontak />
+    case 5:
+        return <FormSurvey />
   }
 }
 
