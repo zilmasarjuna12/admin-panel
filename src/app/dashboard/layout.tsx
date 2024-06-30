@@ -56,6 +56,11 @@ const menus = [
         label: "Simpanan Pokok Khusus"
       }
     ]
+  },
+  {
+    key: "5",
+    label: "Pengajuan Pembiayaan",
+    href: "/dashboard/pembiayaan"
   }
 ]
 
