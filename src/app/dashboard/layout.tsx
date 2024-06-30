@@ -26,7 +26,8 @@ const menus = [
       },
       {
         key: "3-3",
-        label: "Data Manajerial"
+        label: "Data Manajerial",
+        href: "/dashboard/master/manajerial"
       },
       {
         key: "3-4",
