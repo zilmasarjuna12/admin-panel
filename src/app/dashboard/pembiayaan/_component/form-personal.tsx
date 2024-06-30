@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import { useFormContext } from "react-hook-form";
+import { format } from "date-fns"
+
 import {
   FormControl,
   FormField,
@@ -7,7 +10,15 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Button } from "@/components/ui/button"
+import { Calendar as CalendarIcon } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 import { useUploadFile } from "@/hooks/use-upload-file"
 
@@ -28,6 +39,7 @@ import {
 import { FileUploader } from "@/components/upload"
 
 const FormPersonal = () => {
+  const [date, setDate] = useState<Date>()
   const form = useFormContext<any>();
 
   return (
@@ -40,7 +52,7 @@ const FormPersonal = () => {
             <FormItem>
               <FormLabel>Nama Lengkap</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Nama lengkap" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -53,7 +65,7 @@ const FormPersonal = () => {
             <FormItem>
               <FormLabel>Ibu Kandung</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Ibu kandung" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -68,7 +80,7 @@ const FormPersonal = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Pilih status tempat tinggal" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -90,7 +102,7 @@ const FormPersonal = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Pilih status pernikahan" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -112,20 +124,33 @@ const FormPersonal = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input placeholder="Tempat lahir" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <div className="relative max-w-sm">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                  </svg>
-              </div>
-              <input id="datepicker-autohide" datepicker-autohide type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" />
-            </div>
+            <Popover modal={true}>
+              <PopoverTrigger asChild>
+                <Button
+                  variant={"outline"}
+                  className={cn(
+                    "w-full justify-start text-left font-normal",
+                    !date && "text-muted-foreground"
+                  )}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {date ? format(date, "PPP") : <span>Tanggal lahir</span>}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  selected={date}
+                  onSelect={setDate}
+                  initialFocus
+                />
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
         <FormField
@@ -135,7 +160,7 @@ const FormPersonal = () => {
             <FormItem>
               <FormLabel>Jumlah Tanggungan</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Jumlah tanggungan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -151,7 +176,7 @@ const FormPersonal = () => {
               <FormItem className="col-span-3">
                 <FormLabel>Alamat Lengkap KTP</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Alamat lengkap" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -166,7 +191,7 @@ const FormPersonal = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Provinsi" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -188,7 +213,7 @@ const FormPersonal = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Kota" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -210,7 +235,7 @@ const FormPersonal = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Kecamatan" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -247,7 +272,7 @@ const FormPersonal = () => {
               <FormItem className="col-span-3">
                 <FormLabel>Alamat Lengkap Domisili</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Alamat lengkap" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -262,7 +287,7 @@ const FormPersonal = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Provinsi" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -284,7 +309,7 @@ const FormPersonal = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Kota" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -306,7 +331,7 @@ const FormPersonal = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Kecamatan" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>

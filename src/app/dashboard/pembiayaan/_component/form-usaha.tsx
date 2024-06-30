@@ -40,7 +40,7 @@ const FormUsaha = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Jenis usaha" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -62,7 +62,7 @@ const FormUsaha = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Lokasi tempat usaha" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -83,7 +83,7 @@ const FormUsaha = () => {
             <FormItem className="col-span-1">
               <FormLabel>Omset Bulanan</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Omset bulanan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -97,7 +97,7 @@ const FormUsaha = () => {
             <FormItem className="col-span-1">
               <FormLabel>Laba bersih bulanan</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Laba bersih bulanan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -111,7 +111,7 @@ const FormUsaha = () => {
             <FormItem className="col-span-2">
               <FormLabel>Koordinat</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Koordinat" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -125,7 +125,7 @@ const FormUsaha = () => {
             <FormItem className="col-span-2">
               <FormLabel>Jumlah Karyawan</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Jumlah karyawan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -139,7 +139,7 @@ const FormUsaha = () => {
             <FormItem className="col-span-2">
               <FormLabel>Foto Tempat Usaha</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Foto tempat usaha" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

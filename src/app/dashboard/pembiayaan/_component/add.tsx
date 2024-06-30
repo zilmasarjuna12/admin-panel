@@ -84,7 +84,7 @@ const AddForm = () => {
         <div className="p-6">
           <Step 
             activeStep={activeStep}
-            steps={["Personal", "Pekerjaan", "Usaha", "Kontak", "Survei", "Review"]}
+            steps={["Personal", "Pekerjaan", "Usaha", "Kontak", "Survei"]}
           />
           <FormProvider {...form}>
             {
@@ -93,10 +93,17 @@ const AddForm = () => {
           </FormProvider>
         </div>
         <DialogFooter className="bg-white px-6 py-3 shadow-slate border-t-[1px] border-gray-200 shadow-lg">
-          <Button 
-            type="button"
-            onClick={handleNext}
-          >Lanjutkan</Button>
+          {activeStep < 5 ? (
+              <Button 
+                type="button"
+                onClick={handleNext}
+              >Lanjutkan</Button>
+            ) : (
+              <Button 
+                type="submit"
+              >Submit</Button>
+            )
+          }
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -32,7 +32,7 @@ const FormKontak = () => {
             <FormItem className="col-span-2">
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -68,7 +68,7 @@ const FormKontak = () => {
               render={({ field }) => (
                 <FormItem className="col-span-2">
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input placeholder="Nomor rekening" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -83,7 +83,7 @@ const FormKontak = () => {
             <FormItem className="col-span-2">
               <FormLabel>No. Whatsapp</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="No. Whatsapp" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -119,7 +119,7 @@ const FormKontak = () => {
               render={({ field }) => (
                 <FormItem className="col-span-2">
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input placeholder="Nomor rekening" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -138,7 +138,7 @@ const FormKontak = () => {
               <FormItem>
                 <FormLabel>Nama</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Nama" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -153,7 +153,7 @@ const FormKontak = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Hubungan" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -173,7 +173,7 @@ const FormKontak = () => {
               <FormItem className="col-span-2">
                 <FormLabel>Alamat Lengkap</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Alamat lengkap" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -187,7 +187,7 @@ const FormKontak = () => {
               <FormItem>
                 <FormLabel>Nama</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Nama" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -202,7 +202,7 @@ const FormKontak = () => {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Hubungan" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -222,7 +222,7 @@ const FormKontak = () => {
               <FormItem className="col-span-2">
                 <FormLabel>Alamat Lengkap</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Alamat lengkap" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

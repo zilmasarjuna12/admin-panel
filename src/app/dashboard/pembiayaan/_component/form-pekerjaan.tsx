@@ -32,7 +32,7 @@ const FormPekerjaan = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Jenis pekerjaan" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -53,7 +53,7 @@ const FormPekerjaan = () => {
             <FormItem>
               <FormLabel>No. NPWP</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="No. NPWP" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -66,7 +66,7 @@ const FormPekerjaan = () => {
             <FormItem>
               <FormLabel>Perusahaan</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Perusahaan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +79,7 @@ const FormPekerjaan = () => {
             <FormItem>
               <FormLabel>No. BPJS</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="No. BPJS" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -94,7 +94,7 @@ const FormPekerjaan = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Jabatan pekerjaan" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -114,7 +114,7 @@ const FormPekerjaan = () => {
             <FormItem>
               <FormLabel>No. SK</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="No. SK" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -129,7 +129,7 @@ const FormPekerjaan = () => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Status pekerjaan" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -149,7 +149,7 @@ const FormPekerjaan = () => {
             <FormItem>
               <FormLabel>Gaji Pokok Bulanan</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Gaji pokok bulanan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

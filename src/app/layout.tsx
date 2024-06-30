@@ -3,6 +3,7 @@ import ThemeProvider from "@/provider/theme-provider";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'react-day-picker/src/style.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
