@@ -7,7 +7,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 
-import { ArrowUpDown, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 import {
@@ -39,7 +38,7 @@ export function DataTable<TData, TValue>({
       <div className="rounded-md border">
         <Table>
           <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
+            {table.getHeaderGroups().map((headerGroup: { id: any; headers: any[] }) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
@@ -58,7 +57,7 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row: { id: any; getIsSelected: () => any; getVisibleCells: () => any[] }) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}

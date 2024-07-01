@@ -76,7 +76,7 @@ const Layout = ({
           Logo
         </span>
         <Menu 
-          menus={menus}
+          menus={menus}          
         />
       </div>
       <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
