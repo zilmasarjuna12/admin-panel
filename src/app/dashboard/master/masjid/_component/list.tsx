@@ -11,42 +11,31 @@ const data = [
   {
     id: "728ed52f",
     name: "Al - XXX",
+    city: "Bandung",
+    province: "Jawa Barat",
     phone_number: "081XXXX",
     coordinate: "5123,123123",
     account_bank: "123123123",
     status: "Aktif"
-  },
-  {
-    id: "728ed52f",
-    name: "Al - XXX",
-    phone_number: "081XXXX",
-    coordinate: "5123,123123",
-    account_bank: "123123123",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52f",
-    name: "Al - XXX",
-    phone_number: "081XXXX",
-    coordinate: "5123,123123",
-    account_bank: "123123123",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52f",
-    name: "Al - XXX",
-    phone_number: "081XXXX",
-    coordinate: "5123,123123",
-    account_bank: "123123123",
-    status: "Aktif"
-  },
+  }
 ]
 
 const List = () => {
   const columns: ColumnDef<any>[] = [
     {
       accessorKey: "name",
-      header: "Masjid"
+      header: "Masjid",
+      cell: ({ row }) => {
+        return (
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gray-200 rounded-full" />
+            <div>
+              <div className="font-semibold">{row.original.name}</div>
+              <div className="text-sm text-gray-500">{row.original.city}, {row.original.province}</div>
+            </div>
+          </div>
+        )
+      }
     },
     {
       accessorKey: "phone_number",

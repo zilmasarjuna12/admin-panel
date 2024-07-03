@@ -11,22 +11,7 @@ const data = [
   {
     id: "728ed52f",
     name: "Rizal",
-    jenis_relawan: "Relawan IT",
-    alamat: "....",
-    kontribusi: "-",
-    tunjangan: "-"
-  },
-  {
-    id: "728ed52f",
-    name: "Rizal",
-    jenis_relawan: "Relawan IT",
-    alamat: "....",
-    kontribusi: "-",
-    tunjangan: "-"
-  },
-  {
-    id: "728ed52f",
-    name: "Rizal",
+    no: "5001",
     jenis_relawan: "Relawan IT",
     alamat: "....",
     kontribusi: "-",
@@ -38,7 +23,18 @@ const List = () => {
   const columns: ColumnDef<any>[] = [
     {
       accessorKey: "name",
-      header: "Relawan"
+      header: "Relawan",
+      cell: ({ row }) => {
+        return (
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gray-200 rounded-full" />
+            <div>
+              <div className="font-semibold">{row.original.name}</div>
+              <div className="text-sm text-gray-500">{row.original.no}</div>
+            </div>
+          </div>
+        )
+      }
     },
     {
       accessorKey: "jenis_relawan",

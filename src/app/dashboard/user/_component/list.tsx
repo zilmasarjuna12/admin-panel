@@ -11,76 +11,7 @@ const users = [
   {
     id: "728ed52f",
     user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
-    role: "Super Admin",
-    contact: "081293XXX",
-    status: "Aktif"
-  },
-  {
-    id: "728ed52a",
-    user: "Zilmas",
+    no_aggota: "5001",
     role: "Super Admin",
     contact: "081293XXX",
     status: "Aktif"
@@ -92,6 +23,17 @@ const List = () => {
     {
       accessorKey: "user",
       header: "User",
+      cell: ({ row }) => {
+        return (
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gray-200 rounded-full" />
+            <div>
+              <div className="font-semibold">{row.original.user}</div>
+              <div className="text-sm text-gray-500">{row.original.no_aggota}</div>
+            </div>
+          </div>
+        )
+      }
     },
     {
       accessorKey: "role",

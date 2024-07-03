@@ -8,6 +8,7 @@ import {
 
 import FilterForm from "./_component/filter"
 import List from "./_component/list"
+import AddForm from './_component/add'
 
 const Page = () => {
   return (
@@ -31,9 +32,9 @@ const Page = () => {
      
       <div className="md:flex items-center">
         <FilterForm />
-        {/* <div className="mt-3 md:mt-0 flex md:ml-auto md:items-center space-x-4">
+        <div className="mt-3 md:mt-0 flex md:ml-auto md:items-center space-x-4">
           <AddForm />
-        </div> */}
+        </div>
       </div>
       <div className="mt-6">
         <List />
